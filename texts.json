@@ -1,0 +1,10 @@
+{
+    "title": "Frenchify",
+    "source": "source",
+    "from": "from",
+    "html": "html output",
+    "rendered": "rendered output",
+    "frenchify": "frenchify",
+    "markdown": "markdown to html",
+    "convert": "convert"
+}

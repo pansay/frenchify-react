@@ -32,10 +32,8 @@ class App extends Component {
   }
 
   handleChange = e => {
-    const target = e.target;
-    const value = target.type === 'checkbox' ?
-      target.checked : target.value;
-    const name = target.name;
+    const name = e.target.name;
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
 
     this.setState({
       [name]: value

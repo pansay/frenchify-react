@@ -39,9 +39,8 @@ class App extends Component {
 
     this.setState({
       [name]: value
-    });
+    }, this.convert);
 
-    this.convert();
   }
 
   render() {

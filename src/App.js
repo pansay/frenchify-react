@@ -8,16 +8,16 @@ import txt from '../texts.json';
 
 class App extends Component {
 
- constructor() {
+  constructor() {
     super();
-    this.state = {
-      frenchify: false,
-      markdown: false,
-      from: '',
-      html: '',
-    };
-
     this.converter = new Converter();
+  }
+
+  state = {
+    frenchify: false,
+    markdown: false,
+    from: '',
+    html: '',
   }
 
   convert() {

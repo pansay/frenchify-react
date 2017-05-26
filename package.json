@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "showdown": "^1.6.4"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Converter} from 'showdown';
+import frenchify from './frenchify';
 import './css/main.css';
 import Footer from './Footer';
 import Header from './Header';
@@ -14,6 +16,19 @@ class App extends Component {
       from: '',
       html: '',
     };
+
+    this.converter = new Converter();
+  }
+
+  convert() {
+    let html = this.state.from;
+    if (this.state.frenchify) {
+      html = frenchify(html);
+    }
+    if (this.state.markdown) {
+      html = this.converter.makeHtml(html);
+    }
+    this.setState({html});
   }
 
   handleChange = e => {
@@ -25,6 +40,8 @@ class App extends Component {
     this.setState({
       [name]: value
     });
+
+    this.convert();
   }
 
   render() {
@@ -68,9 +85,7 @@ class App extends Component {
               </label>
               <div className="column">
                   {txt.rendered}
-                  <div className="rendered">
-                    {this.state.html}
-                  </div>
+                  <div className="rendered" dangerouslySetInnerHTML={{__html: this.state.html}}></div>
               </div>
             </div>
             </form>

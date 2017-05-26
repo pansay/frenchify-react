@@ -4,7 +4,7 @@ import frenchify from './frenchify';
 import './css/main.css';
 import Footer from './Footer';
 import Header from './Header';
-import * as txt from '../texts.json';
+import txt from '../texts.json';
 
 class App extends Component {
 
@@ -38,7 +38,6 @@ class App extends Component {
     this.setState({
       [name]: value
     }, this.convert);
-
   }
 
   render() {
@@ -48,41 +47,41 @@ class App extends Component {
         <div className="main">
           <form>
             <label className="checkbox">
-                {txt.frenchify}
-                <input
-                  type="checkbox"
-                  name="frenchify"
-                  checked={this.state.frenchify}
-                  onChange={this.handleChange} />
+              {txt.frenchify}
+              <input
+                type="checkbox"
+                name="frenchify"
+                checked={this.state.frenchify}
+                onChange={this.handleChange} />
             </label>
             <label className="checkbox">
-                {txt.markdown}
-                <input
-                  type="checkbox"
-                  name="markdown"
-                  checked={this.state.markdown}
-                  onChange={this.handleChange} />
+              {txt.markdown}
+              <input
+                type="checkbox"
+                name="markdown"
+                checked={this.state.markdown}
+                onChange={this.handleChange} />
             </label>
             <div className="columns">
               <label className="column">
-                  {txt.from}
-                  <textarea
-                    name="from"
-                    value={this.state.from}
-                    onChange={this.handleChange}>
-                  </textarea>
+                {txt.from}
+                <textarea
+                  name="from"
+                  value={this.state.from}
+                  onChange={this.handleChange}>
+                </textarea>
               </label>
               <label className="column">
-                  {txt.html}
-                  <textarea
-                    name="html"
-                    value={this.state.html}
-                    onChange={this.handleChange}>
-                  </textarea>
+                {txt.html}
+                <textarea
+                  name="html"
+                  value={this.state.html}
+                  onChange={this.handleChange}>
+                </textarea>
               </label>
               <div className="column">
-                  {txt.rendered}
-                  <div className="rendered" dangerouslySetInnerHTML={{__html: this.state.html}}></div>
+                {txt.rendered}
+                <div className="rendered" dangerouslySetInnerHTML={{__html: this.state.html}}></div>
               </div>
             </div>
             </form>
